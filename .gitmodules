@@ -1,0 +1,3 @@
+[submodule "resnet50"]
+	path = resnet50
+	url = git@github.com:bkhanal-11/resnet50.git
