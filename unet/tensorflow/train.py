@@ -163,6 +163,13 @@ img_height = 96
 img_width = 128
 num_channels = 3
 
+processed_image_ds = process_dataset('../assets/self_driving/')
+
+EPOCHS = 10
+VAL_SUBSPLITS = 5
+BUFFER_SIZE = 500
+BATCH_SIZE = 8
+
 unet = unet_model((img_height, img_width, num_channels))
 
 unet.summary()
@@ -170,13 +177,6 @@ unet.summary()
 unet.compile(optimizer='adam',
               loss=dice_loss,
               metrics=['accuracy'])
-
-processed_image_ds = process_dataset('../assets/self_driving/')
-
-EPOCHS = 10
-VAL_SUBSPLITS = 5
-BUFFER_SIZE = 500
-BATCH_SIZE = 8
 
 train_dataset = processed_image_ds.cache().shuffle(BUFFER_SIZE).batch(BATCH_SIZE)
 print(processed_image_ds.element_spec)
