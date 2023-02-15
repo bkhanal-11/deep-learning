@@ -51,7 +51,7 @@ class SelfDrivingDataset:
     def __init__(self, batch_size):
         self.batch_size = batch_size
         # Input Data
-        self.root = "assets/self_driving/"
+        self.root = "../assets/self_driving/"
 
         sub_dir = []
 
@@ -143,7 +143,7 @@ class AerialImagingDataset:
     def __init__(self, batch_size):
         self.batch_size = batch_size
         # Input Data
-        self.root = "assets/aerial_imaging/"
+        self.root = "../assets/aerial_imaging/"
 
         sub_dir = []
 
